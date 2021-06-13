@@ -9,6 +9,7 @@ git clone <clone-with-ssh>
 git fetch origin
 ```
 Note: Nothing is added or remove in local branch. Only updates info about what is going on in the remote repository.
+
 ## Create local branch from remote branch
 ```
 git checkout -b <local-branch-name> <origin/remote-branch-name>
@@ -23,6 +24,12 @@ In case the branch does not exist in the remote branch, it will be added.
 
 In case the branch exists, as soon as the parent of the local branch is the remote branch there I want to push, it will be ok.
 It is suggested to use the same **local-branch-name** and **remote-branch-name**
+
+## Commit to an existing Remote Branch
+
+```
+git push origin <remote-branch-name>
+```
 
 ## Reset like origin/main
 ```
@@ -43,11 +50,17 @@ git clean -f
 git log
 ```
 It will look like:
+
 1.1 Last commit
+
 1.2 Commit
+
 1.3 Commit
+
 1.4 Commit
+
 1.5 Parent I want
+
 2. I want to squeez all above the parent I want
 ```
 git rebase --interactive HEAD~4
@@ -78,5 +91,16 @@ git pull --rebase
 ```
 git checkoub <feature-branch>
 git rebase master
+```
+## Submodules
+
+* Adding submodule
+```
+git submodule add <repository-ssh-url>
+```
+
+* Initiate submodule
+```
+git submodule update --init --recursive
 ```
 
